@@ -7,16 +7,17 @@
 <meta name="description" content="Service AC Bariklana Magelang: servis AC rumah & kendaraan, pemasangan, perawatan rutin, perbaikan, tukar tambah & jual beli AC. Melayani seluruh Jawa Tengah. Proyek tender & pesanan kustom melayani se-Indonesia. Garansi 3 bulan.">
 <meta name="keywords" content="service ac magelang, service ac jawa tengah, tukar tambah ac, pasang ac magelang, cuci ac magelang, service ac mobil, jual beli ac bekas, tender ac, bariklana teknik">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0e7490">
 <link rel="canonical" href="https://bariklanateknik.com/">
 
-<!-- Open Graph (tampilan rapi saat link dibagikan di WA/Facebook) -->
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Service AC Bariklana Magelang — Bergaransi 3 Bulan">
 <meta property="og:description" content="Servis AC rumah & kendaraan, pemasangan, perawatan rutin, perbaikan, tukar tambah & jual beli semua ukuran. Melayani se-Jawa Tengah, tender & kustom se-Indonesia.">
 <meta property="og:url" content="https://bariklanateknik.com/">
 <meta property="og:image" content="https://bariklanateknik.com/ac-pasang.jpg">
 
-<!-- Schema.org untuk SEO lokal Google -->
+<!-- Schema.org -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,375 +31,447 @@
     "addressRegion": "Jawa Tengah",
     "addressCountry": "ID"
   },
-  "areaServed": [
-    { "@type": "State", "name": "Jawa Tengah" }
-  ],
+  "areaServed": [{ "@type": "State", "name": "Jawa Tengah" }],
   "description": "Servis AC rumah & kendaraan, pemasangan unit baru & bekas, perawatan rutin, perbaikan, tukar tambah & jual beli. Layanan reguler seluruh Jawa Tengah; proyek tender & pesanan kustom melayani seluruh Indonesia.",
   "priceRange": "$$",
   "openingHours": "Mo-Sa 08:00-17:00"
 }
 </script>
 
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- Prioritaskan LCP: preload gambar hero -->
+<link rel="preload" as="image" href="ac-pasang.jpg" fetchpriority="high">
+
 <style>
-  html { scroll-behavior: smooth; }
-  .hero-bg {
-    background: linear-gradient(135deg, rgba(8,47,73,.92), rgba(14,116,144,.85)), url('ac-pasang.jpg') center/cover;
-  }
-  .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
-  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 18px 35px -12px rgba(6,182,212,.35); }
-  .fade-up { opacity: 0; transform: translateY(28px); transition: all .7s ease; }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
-  .wa-float { animation: pulse 2s infinite; }
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37,211,102,.55); }
-    70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
-    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+
+.container{max-width:72rem;margin-inline:auto;padding-inline:1rem}
+
+/* ===== NAVBAR ===== */
+.navbar{position:fixed;inset-inline:0;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+.brand{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.05rem;color:#0f172a;line-height:1.2}
+.brand span.cyan{color:#0891b2}
+.brand small{display:block;font-size:10px;font-weight:500;color:#64748b;letter-spacing:.05em}
+.nav-links{display:none;align-items:center;gap:1.5rem;font-size:.875rem;font-weight:500}
+.nav-links a:hover{color:#0891b2}
+.btn-nav{background:#0891b2;color:#fff;padding:.5rem 1rem;border-radius:999px}
+.btn-nav:hover{background:#0e7490}
+#menuBtn{display:block;background:none;border:0;padding:.5rem;cursor:pointer;color:#334155}
+
+#mobileMenu{display:none;border-top:1px solid #f1f5f9;background:#fff;padding:0 1.5rem 1rem;font-size:.875rem;font-weight:500}
+#mobileMenu.open{display:block}
+#mobileMenu a{display:block;padding:.65rem 0;border-bottom:1px solid #f1f5f9}
+#mobileMenu .btn-wa-mobile{display:block;margin-top:.75rem;background:#0891b2;color:#fff;text-align:center;padding:.75rem;border-radius:999px;font-weight:600;border:none}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:6rem;color:#fff;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,47,73,.92),rgba(14,116,144,.85));z-index:-1}
+.hero-content{padding:4rem 0;max-width:42rem}
+.badge{display:inline-block;background:rgba(6,182,212,.25);color:#a5f3fc;font-size:.75rem;font-weight:600;padding:.35rem 1rem;border-radius:999px;margin-bottom:1.25rem}
+.hero h1{font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:1.25rem}
+.hero h1 span{color:#22d3ee}
+.hero p{color:#e2e8f0;margin-bottom:2rem;max-width:32rem}
+@media(min-width:768px){.hero h1{font-size:3rem}}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem}
+.btn-wa{display:inline-flex;align-items:center;gap:.5rem;background:#22c55e;color:#fff;font-weight:600;padding:.9rem 1.75rem;border-radius:999px;box-shadow:0 10px 20px -8px rgba(34,197,94,.4)}
+.btn-wa:hover{background:#16a34a}
+.btn-outline{display:inline-flex;align-items:center;border:2px solid rgba(255,255,255,.4);color:#fff;font-weight:600;padding:.85rem 1.75rem;border-radius:999px;transition:border-color .2s}
+.btn-outline:hover{border-color:#22d3ee}
+.hero-stats{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin-top:2.5rem;font-size:.875rem}
+.hero-stats b{display:block;font-size:1.5rem;font-weight:800;color:#22d3ee}
+.hero-stats span{color:#cbd5e1}
+
+/* ===== SECTIONS ===== */
+section{padding:5rem 0}
+.section-head{text-align:center;margin-bottom:3.5rem}
+.eyebrow{color:#0891b2;font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
+.section-head h2{font-size:1.875rem;font-weight:800;margin-top:.5rem;color:#0f172a}
+@media(min-width:768px){.section-head h2{font-size:2.25rem}}
+.section-head p{color:#64748b;margin-top:.75rem;max-width:42rem;margin-inline:auto}
+
+/* ===== LAYANAN ===== */
+.grid-3{display:grid;gap:1.5rem}
+@media(min-width:640px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.card{background:#fff;border-radius:1rem;padding:1.75rem;box-shadow:0 1px 3px rgba(0,0,0,.05);border:1px solid #f1f5f9;transition:transform .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 35px -12px rgba(6,182,212,.35)}
+.card .icon{width:3.5rem;height:3.5rem;border-radius:.75rem;background:#ecfeff;display:grid;place-items:center;font-size:1.75rem;margin-bottom:1.25rem}
+.card h3{font-weight:700;font-size:1.05rem;margin-bottom:.5rem}
+.card p{font-size:.875rem;color:#64748b}
+
+/* ===== GARANSI ===== */
+.dark{background:#0f172a;color:#fff}
+.dark-grid{display:grid;gap:3rem;align-items:center}
+@media(min-width:768px){.dark-grid{grid-template-columns:1fr 1fr}}
+.dark .eyebrow{color:#22d3ee}
+.dark h2{font-size:1.875rem;font-weight:800;margin:.5rem 0 1.25rem}
+.dark p.lead{color:#cbd5e1}
+.dark ul{list-style:none;margin-top:1.5rem;display:grid;gap:.75rem;font-size:.875rem;color:#cbd5e1}
+.dark li::before{content:"✓";color:#22d3ee;font-weight:700;margin-right:.75rem}
+.benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.benefit{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:1rem;padding:1.5rem;text-align:center}
+.benefit .emo{font-size:2rem;margin-bottom:.5rem}
+.benefit b{display:block}
+.benefit small{font-size:.7rem;color:#94a3b8;margin-top:.25rem;display:block}
+
+/* ===== AREA ===== */
+.area-card{background:#fff;border-radius:1rem;border:1px solid #f1f5f9;box-shadow:0 1px 3px rgba(0,0,0,.05);overflow:hidden;margin-bottom:1.5rem}
+.area-head{display:flex;gap:.75rem;align-items:flex-start;padding:1.75rem;border-bottom:1px solid #f1f5f9}
+.area-head .icon{flex-shrink:0;width:3rem;height:3rem;border-radius:.75rem;background:#ecfeff;display:grid;place-items:center;font-size:1.5rem}
+.area-head h3{font-weight:700;color:#0f172a}
+.area-head p{font-size:.875rem;color:#64748b}
+.chips{padding:1rem 1.75rem 1.5rem}
+.chips-label{font-size:.7rem;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem}
+.chip-list{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{background:#fff;border:1px solid #e2e8f0;border-radius:999px;padding:.5rem 1.25rem;font-size:.85rem;font-weight:500;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.chip-all{background:#0891b2;color:#fff;font-weight:600;padding:.5rem 1rem}
+
+.nasional{background:linear-gradient(135deg,#0f172a,#164e63);border-radius:1rem;padding:2rem;color:#fff;box-shadow:0 20px 25px -5px rgba(0,0,0,.2)}
+@media(min-width:768px){.nasional{padding:2.5rem}}
+.nasional-grid{display:grid;gap:2rem;align-items:center}
+@media(min-width:768px){.nasional-grid{grid-template-columns:2fr 1fr}}
+.badge-dark{display:inline-block;background:rgba(6,182,212,.25);color:#67e8f9;font-size:.75rem;font-weight:600;padding:.35rem 1rem;border-radius:999px;margin-bottom:1rem}
+.nasional h3{font-size:1.5rem;font-weight:800;margin-bottom:.75rem}
+.nasional p{color:#cbd5e1;font-size:.875rem;max-width:36rem}
+.btn-cyan{display:block;text-align:center;background:#06b6d4;color:#fff;font-weight:700;padding:.9rem 1.5rem;border-radius:999px;box-shadow:0 10px 15px -3px rgba(0,0,0,.2)}
+.btn-cyan:hover{background:#0891b2}
+.nasional-icons{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;text-align:center}
+@media(min-width:640px){.nasional-icons{grid-template-columns:repeat(4,1fr)}}
+.nasional-icons .emo{font-size:1.5rem}
+.nasional-icons b{display:block;font-size:.85rem}
+.nasional-icons small{font-size:.7rem;color:#94a3b8}
+
+/* ===== GALERI ===== */
+.tinted{background:rgba(207,250,254,.4)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+@media(min-width:768px){.gallery{grid-template-columns:repeat(4,1fr)}}
+.gallery figure{position:relative;overflow:hidden;border-radius:.75rem;height:12rem;background:linear-gradient(135deg,#cffafe,#dbeafe)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.gallery figure:hover img{transform:scale(1.1)}
+.gallery figcaption{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-size:.85rem;font-weight:600;color:#0e7490;padding:.75rem;transition:opacity .3s}
+.gallery figure:hover figcaption{opacity:0}
+
+/* ===== TESTIMONI ===== */
+.grid-3-single{display:grid;gap:1.5rem}
+@media(min-width:768px){.grid-3-single{grid-template-columns:repeat(3,1fr)}}
+.stars{color:#fbbf24;margin-bottom:.75rem}
+.testi p{color:#475569;font-size:.875rem;margin-bottom:1rem}
+.testi .who{font-weight:600;font-size:.85rem}
+
+/* ===== CTA ===== */
+.cta{background:linear-gradient(135deg,#0891b2,#1d4ed8);border-radius:1.5rem;padding:2.5rem 1.5rem;text-align:center;color:#fff;box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+@media(min-width:768px){.cta{padding:3.5rem}}
+.cta h2{font-size:1.875rem;font-weight:800;margin-bottom:1rem}
+.cta>p{color:#a5f3fc;max-width:36rem;margin:0 auto 2rem}
+.cta-actions{display:flex;flex-direction:column;justify-content:center;gap:1rem;margin-bottom:2.5rem}
+@media(min-width:640px){.cta-actions{flex-direction:row}}
+.btn-white{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:#fff;color:#0e7490;font-weight:700;padding:.9rem 2rem;border-radius:999px;box-shadow:0 10px 15px -3px rgba(0,0,0,.15)}
+.btn-white:hover{background:#ecfeff}
+.cta-info{display:grid;gap:1.5rem;font-size:.875rem;color:#a5f3fc;border-top:1px solid rgba(255,255,255,.2);padding-top:2rem}
+@media(min-width:640px){.cta-info{grid-template-columns:repeat(3,1fr)}}
+.cta-info b{display:block;color:#fff;margin-bottom:.25rem}
+
+/* ===== FOOTER ===== */
+footer{background:#0f172a;color:#94a3b8;padding:2.5rem 0;font-size:.875rem}
+.footer-grid{display:grid;gap:2rem;text-align:center}
+@media(min-width:768px){.footer-grid{grid-template-columns:repeat(3,1fr);text-align:left}}
+footer .brand-row{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:.75rem}
+@media(min-width:768px){footer .brand-row{justify-content:flex-start}}
+footer .brand-row span{font-weight:800;color:#fff;font-size:1.05rem}
+footer h3{color:#fff;font-weight:700;margin-bottom:.75rem}
+footer p.xs{font-size:.75rem;line-height:1.8}
+footer .copyright{text-align:center;margin-top:2rem;font-size:.75rem;border-top:1px solid #1e293b;padding-top:1.5rem}
+
+/* ===== WA FLOAT ===== */
+.wa-float{position:fixed;bottom:1.25rem;right:1.25rem;z-index:50;background:#22c55e;color:#fff;width:3.5rem;height:3.5rem;border-radius:999px;display:grid;place-items:center;box-shadow:0 20px 25px -5px rgba(0,0,0,.2);animation:pulse 2s infinite}
+.wa-float:hover{background:#16a34a}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* ===== ANIMASI SCROLL ===== */
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+@media(min-width:1024px){
+  .nav-links{display:flex}
+  #menuBtn{display:none}
+}
 </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans">
+<body>
 
 <!-- ===== NAVBAR ===== -->
-<header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur shadow-sm">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="#home" class="flex items-center gap-2">
-  <img src="images/service-ac-magelang-logo-bariklana.png" alt="Logo Service AC Bariklana Magelang" class="w-10 h-10 rounded-xl object-contain">
-  <span class="font-extrabold text-lg text-slate-900 leading-tight">Bariklana&nbsp;<span class="text-cyan-600">Teknik</span><span class="block text-[10px] font-medium text-slate-500 tracking-wide">SERVICE AC MAGELANG</span></span>
-  </a>
-    <nav class="hidden lg:flex items-center gap-7 text-sm font-medium">
-      <a href="#layanan" class="hover:text-cyan-600">Layanan</a>
-      <a href="#garansi" class="hover:text-cyan-600">Garansi</a>
-      <a href="#area" class="hover:text-cyan-600">Area Layanan</a>
-      <a href="#galeri" class="hover:text-cyan-600">Galeri</a>
-      <a href="#testimoni" class="hover:text-cyan-600">Testimoni</a>
-      <a href="https://wa.me/6281234567890?text=Halo%20Service%20AC%20Bariklana,%20saya%20mau%20tanya" class="bg-cyan-600 text-white px-4 py-2 rounded-full hover:bg-cyan-700">Hubungi Kami</a>
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="brand">
+      <img src="images/service-ac-magelang-logo-bariklana.png" alt="Logo Service AC Bariklana Magelang" width="40" height="40" style="width:2.5rem;height:2.5rem;border-radius:.75rem;object-fit:contain" fetchpriority="high">
+      <span>Bariklana&nbsp;<span class="cyan">Teknik</span><small>SERVICE AC MAGELANG</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#layanan">Layanan</a>
+      <a href="#garansi">Garansi</a>
+      <a href="#area">Area Layanan</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="https://wa.me/6281234567890?text=Halo%20Service%20AC%20Bariklana,%20saya%20mau%20tanya" class="btn-nav">Hubungi Kami</a>
     </nav>
-    <button id="menuBtn" class="lg:hidden p-2" aria-label="Buka menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    <button id="menuBtn" aria-label="Buka menu" aria-expanded="false">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
   </div>
-  <nav id="mobileMenu" class="hidden lg:hidden border-t bg-white px-6 pb-4 space-y-1 text-sm font-medium">
-    <a href="#layanan" class="block py-2.5 border-b border-slate-100">Layanan</a>
-    <a href="#garansi" class="block py-2.5 border-b border-slate-100">Garansi 3 Bulan</a>
-    <a href="#area" class="block py-2.5 border-b border-slate-100">Area Layanan</a>
-    <a href="#galeri" class="block py-2.5 border-b border-slate-100">Galeri</a>
-    <a href="#testimoni" class="block py-2.5 border-b border-slate-100">Testimoni</a>
-    <a href="https://wa.me/6281234567890?text=Halo%20Service%20AC%20Bariklana%20Magelang" class="block mt-3 bg-cyan-600 text-white text-center py-3 rounded-full font-semibold">💬 Chat WhatsApp</a>
+  <nav id="mobileMenu">
+    <a href="#layanan">Layanan</a>
+    <a href="#garansi">Garansi 3 Bulan</a>
+    <a href="#area">Area Layanan</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="https://wa.me/6281234567890?text=Halo%20Service%20AC%20Bariklana%20Magelang" class="btn-wa-mobile">💬 Chat WhatsApp</a>
   </nav>
 </header>
 
 <!-- ===== HERO ===== -->
-<section id="home" class="hero-bg min-h-screen flex items-center pt-24 text-white">
-  <div class="max-w-6xl mx-auto px-4 py-16 w-full">
-    <div class="fade-up max-w-2xl">
-      <span class="inline-block bg-cyan-500/25 text-cyan-200 text-xs font-semibold px-4 py-1.5 rounded-full mb-5">✦ Melayani Seluruh Jawa Tengah • Tender & Pesanan Kustom Se-Indonesia</span>
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-5">
-        Service AC <span class="text-cyan-400">Bariklana Magelang</span> — Rumah & Kendaraan, Bergaransi
-      </h1>
-      <p class="text-slate-200 mb-8 max-w-lg">
-        Penyedia jasa pendingin udara terkemuka untuk kebutuhan AC residensial, komersial, hingga kendaraan (mobil & bus). Pemasangan unit baru & bekas, perawatan rutin, perbaikan, tukar tambah, dan jual beli semua ukuran.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="https://wa.me/6281234567890?text=Halo%20Service%20AC%20Bariklana%20Magelang,%20saya%20mau%20tanya%20layanan"
-           class="bg-green-500 hover:bg-green-600 text-white font-semibold px-7 py-3.5 rounded-full flex items-center gap-2 shadow-lg shadow-green-500/30">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2zm5.5 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 01-5.7-5c-.6-1-1-2.1-.4-2.9.3-.4.6-.5.9-.5h.5c.2 0 .3.1.5.5l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3-.1.5.4.8 1 1.5 1.7 2 .3.2.6.4 1 .6.2.1.4.1.5-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.4.2.4.4.4.6z"/></svg>
+<section id="home" class="hero">
+  <!-- LCP: gambar hero sebagai <img> dengan fetchpriority tinggi, bukan background CSS -->
+  <img class="hero-img" src="ac-pasang.jpg" alt="Teknisi memasang unit AC" width="1600" height="900" fetchpriority="high" decoding="async">
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="badge">✦ Melayani Seluruh Jawa Tengah • Tender & Pesanan Kustom Se-Indonesia</span>
+      <h1>Service AC <span>Bariklana Magelang</span> — Rumah &amp; Kendaraan, Bergaransi</h1>
+      <p>Penyedia jasa pendingin udara terkemuka untuk kebutuhan AC residensial, komersial, hingga kendaraan (mobil &amp; bus). Pemasangan unit baru &amp; bekas, perawatan rutin, perbaikan, tukar tambah, dan jual beli semua ukuran.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/6281234567890?text=Halo%20Service%20AC%20Bariklana%20Magelang,%20saya%20mau%20tanya%20layanan" class="btn-wa">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2zm5.5 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 01-5.7-5c-.6-1-1-2.1-.4-2.9.3-.4.6-.5.9-.5h.5c.2 0 .3.1.5.5l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3-.1.5.4.8 1 1.5 1.7 2 .3.2.6.4 1 .6.2.1.4.1.5-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.4.2.4.4.4.6z"/></svg>
           Chat WhatsApp
         </a>
-        <a href="#layanan" class="border-2 border-white/40 hover:border-cyan-400 text-white font-semibold px-7 py-3.5 rounded-full transition">Lihat Layanan</a>
+        <a href="#layanan" class="btn-outline">Lihat Layanan</a>
       </div>
-      <div class="flex flex-wrap gap-x-10 gap-y-4 mt-10 text-sm">
-        <div><span class="block text-2xl font-extrabold text-cyan-400">Jateng</span><span class="text-slate-300">Area layanan utama</span></div>
-        <div><span class="block text-2xl font-extrabold text-cyan-400">Se-Indonesia</span><span class="text-slate-300">Tender & pesanan kustom</span></div>
-        <div><span class="block text-2xl font-extrabold text-cyan-400">3 Bulan</span><span class="text-slate-300">Garansi pengerjaan</span></div>
+      <div class="hero-stats">
+        <div><b>Jateng</b><span>Area layanan utama</span></div>
+        <div><b>Se-Indonesia</b><span>Tender &amp; pesanan kustom</span></div>
+        <div><b>3 Bulan</b><span>Garansi pengerjaan</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== LAYANAN ===== -->
-<section id="layanan" class="py-20">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-14 fade-up">
-      <span class="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Layanan Utama</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold mt-2 text-slate-900">Solusi Pendingin Udara Lengkap</h2>
-      <p class="text-slate-500 mt-3 max-w-2xl mx-auto">Untuk rumah, kantor, usaha, hingga kendaraan (mobil & bus) — dikerjakan oleh teknisi berpengalaman dengan kualitas tinggi dan transparan.</p>
+<section id="layanan">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Layanan Utama</span>
+      <h2>Solusi Pendingin Udara Lengkap</h2>
+      <p>Untuk rumah, kantor, usaha, hingga kendaraan (mobil &amp; bus) — dikerjakan oleh teknisi berpengalaman dengan kualitas tinggi dan transparan.</p>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="fade-up card-hover bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-        <div class="w-14 h-14 rounded-xl bg-cyan-50 text-cyan-600 grid place-items-center text-3xl mb-5">🛠️</div>
-        <h3 class="font-bold text-lg mb-2">Servis AC Rumah & Kendaraan</h3>
-        <p class="text-sm text-slate-500 leading-relaxed">Servis AC split/cassette untuk rumah & kantor, serta AC mobil dan bus. Cuci, isi freon, dan perawatan menyeluruh.</p>
-      </div>
-      <div class="fade-up card-hover bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-        <div class="w-14 h-14 rounded-xl bg-cyan-50 text-cyan-600 grid place-items-center text-3xl mb-5">📦</div>
-        <h3 class="font-bold text-lg mb-2">Pemasangan Unit Baru & Bekas</h3>
-        <p class="text-sm text-slate-500 leading-relaxed">Instalasi rapi dan aman untuk AC baru maupun second, diukur sesuai standar agar dingin maksimal dan hemat listrik.</p>
-      </div>
-      <div class="fade-up card-hover bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-        <div class="w-14 h-14 rounded-xl bg-cyan-50 text-cyan-600 grid place-items-center text-3xl mb-5">🗓️</div>
-        <h3 class="font-bold text-lg mb-2">Perawatan Rutin (Preventive Maintenance)</h3>
-        <p class="text-sm text-slate-500 leading-relaxed">Cuci & pemeriksaan berkala terjadwal agar kinerja AC selalu optimal, awet, dan bebas masalah di kemudian hari.</p>
-      </div>
-      <div class="fade-up card-hover bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-        <div class="w-14 h-14 rounded-xl bg-cyan-50 text-cyan-600 grid place-items-center text-3xl mb-5">🔧</div>
-        <h3 class="font-bold text-lg mb-2">Perbaikan Unit</h3>
-        <p class="text-sm text-slate-500 leading-relaxed">Diagnosa & perbaikan AC bermasalah: tidak dingin, bocor, berbunyi, mati total — hingga penggantian sparepart.</p>
-      </div>
-      <div class="fade-up card-hover bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-        <div class="w-14 h-14 rounded-xl bg-cyan-50 text-cyan-600 grid place-items-center text-3xl mb-5">🔄</div>
-        <h3 class="font-bold text-lg mb-2">Tukar Tambah</h3>
-        <p class="text-sm text-slate-500 leading-relaxed">Tukarkan AC lama Anda dengan unit baru. Penilaian harga jujur & transparan, proses cepat.</p>
-      </div>
-      <div class="fade-up card-hover bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-        <div class="w-14 h-14 rounded-xl bg-cyan-50 text-cyan-600 grid place-items-center text-3xl mb-5">💰</div>
-        <h3 class="font-bold text-lg mb-2">Jual Beli AC Semua Ukuran</h3>
-        <p class="text-sm text-slate-500 leading-relaxed">Unit AC baru & bekas berkualitas dari ½ PK hingga 5 PK. Semua unit second sudah lolos pengecekan teknisi kami.</p>
-      </div>
+    <div class="grid-3">
+      <div class="card fade-up"><div class="icon">🛠️</div><h3>Servis AC Rumah &amp; Kendaraan</h3><p>Servis AC split/cassette untuk rumah &amp; kantor, serta AC mobil dan bus. Cuci, isi freon, dan perawatan menyeluruh.</p></div>
+      <div class="card fade-up"><div class="icon">📦</div><h3>Pemasangan Unit Baru &amp; Bekas</h3><p>Instalasi rapi dan aman untuk AC baru maupun second, diukur sesuai standar agar dingin maksimal dan hemat listrik.</p></div>
+      <div class="card fade-up"><div class="icon">🗓️</div><h3>Perawatan Rutin (Preventive Maintenance)</h3><p>Cuci &amp; pemeriksaan berkala terjadwal agar kinerja AC selalu optimal, awet, dan bebas masalah di kemudian hari.</p></div>
+      <div class="card fade-up"><div class="icon">🔧</div><h3>Perbaikan Unit</h3><p>Diagnosa &amp; perbaikan AC bermasalah: tidak dingin, bocor, berbunyi, mati total — hingga penggantian sparepart.</p></div>
+      <div class="card fade-up"><div class="icon">🔄</div><h3>Tukar Tambah</h3><p>Tukarkan AC lama Anda dengan unit baru. Penilaian harga jujur &amp; transparan, proses cepat.</p></div>
+      <div class="card fade-up"><div class="icon">💰</div><h3>Jual Beli AC Semua Ukuran</h3><p>Unit AC baru &amp; bekas berkualitas dari ½ PK hingga 5 PK. Semua unit second sudah lolos pengecekan teknisi kami.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ===== GARANSI ===== -->
-<section id="garansi" class="py-20 bg-slate-900 text-white">
-  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+<section id="garansi" class="dark">
+  <div class="container dark-grid">
     <div class="fade-up">
-      <span class="text-cyan-400 font-semibold text-sm uppercase tracking-wider">Komitmen Kami</span>
-      <h2 class="text-3xl font-extrabold mt-2 mb-5">Garansi 3 Bulan<br>untuk Setiap Pekerjaan</h2>
-      <p class="text-slate-300 leading-relaxed">
-        Kepercayaan pelanggan adalah prioritas kami. Setiap servis, pemasangan, dan perbaikan yang kami kerjakan dilindungi garansi penuh selama <strong class="text-white">3 bulan</strong>. Jika masalah yang sama muncul kembali, teknisi kami datang kembali — tanpa biaya tambahan.
-      </p>
-      <ul class="mt-6 space-y-3 text-sm text-slate-300">
-        <li class="flex gap-3"><span class="text-cyan-400 font-bold">✓</span> Garansi berlaku untuk servis, pasang, & perbaikan</li>
-        <li class="flex gap-3"><span class="text-cyan-400 font-bold">✓</span> Respon cepat untuk klaim garansi</li>
-        <li class="flex gap-3"><span class="text-cyan-400 font-bold">✓</span> Teknisi berpengalaman & ramah</li>
+      <span class="eyebrow">Komitmen Kami</span>
+      <h2>Garansi 3 Bulan untuk Setiap Pekerjaan</h2>
+      <p class="lead">Kepercayaan pelanggan adalah prioritas kami. Setiap servis, pemasangan, dan perbaikan yang kami kerjakan dilindungi garansi penuh selama <strong style="color:#fff">3 bulan</strong>. Jika masalah yang sama muncul kembali, teknisi kami datang kembali — tanpa biaya tambahan.</p>
+      <ul>
+        <li>Garansi berlaku untuk servis, pasang, &amp; perbaikan</li>
+        <li>Respon cepat untuk klaim garansi</li>
+        <li>Teknisi berpengalaman &amp; ramah</li>
       </ul>
     </div>
-    <div class="fade-up grid grid-cols-2 gap-4">
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-        <div class="text-4xl mb-2">🛡️</div>
-        <div class="font-bold">Garansi Resmi</div>
-        <p class="text-xs text-slate-400 mt-1">3 bulan setelah pengerjaan</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-        <div class="text-4xl mb-2">⚡</div>
-        <div class="font-bold">Responsif</div>
-        <p class="text-xs text-slate-400 mt-1">Chat dibalas cepat</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-        <div class="text-4xl mb-2">🏠🚗</div>
-        <div class="font-bold">Rumah & Mobil</div>
-        <p class="text-xs text-slate-400 mt-1">Termasuk bus & armada</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-        <div class="text-4xl mb-2">💯</div>
-        <div class="font-bold">Kepuasan Pelanggan</div>
-        <p class="text-xs text-slate-400 mt-1">Prioritas utama kami</p>
-      </div>
+    <div class="benefits fade-up">
+      <div class="benefit"><div class="emo">🛡️</div><b>Garansi Resmi</b><small>3 bulan setelah pengerjaan</small></div>
+      <div class="benefit"><div class="emo">⚡</div><b>Responsif</b><small>Chat dibalas cepat</small></div>
+      <div class="benefit"><div class="emo">🏠🚗</div><b>Rumah &amp; Mobil</b><small>Termasuk bus &amp; armada</small></div>
+      <div class="benefit"><div class="emo">💯</div><b>Kepuasan Pelanggan</b><small>Prioritas utama kami</small></div>
     </div>
   </div>
 </section>
 
 <!-- ===== AREA LAYANAN ===== -->
-<section id="area" class="py-20">
-  <div class="max-w-6xl mx-auto px-4">
-
-    <div class="text-center mb-12 fade-up">
-      <span class="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Area Layanan</span>
-      <h2 class="text-3xl font-extrabold mt-2 text-slate-900">Jangkauan Layanan Kami</h2>
-      <p class="text-slate-500 mt-3 max-w-xl mx-auto">Layanan rutin untuk seluruh Jawa Tengah — dan untuk proyek tender serta pesanan kustom, kami siap ke seluruh Indonesia.</p>
+<section id="area">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Area Layanan</span>
+      <h2>Jangkauan Layanan Kami</h2>
+      <p>Layanan rutin untuk seluruh Jawa Tengah — dan untuk proyek tender serta pesanan kustom, kami siap ke seluruh Indonesia.</p>
     </div>
 
-    <!-- Tingkat 1: Jawa Tengah -->
-    <div class="fade-up bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden mb-6">
-      <div class="p-7 border-b border-slate-100">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
-          <span class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 grid place-items-center text-2xl">🗺️</span>
-          <div>
-            <h3 class="font-bold text-lg text-slate-900">Layanan Reguler — Seluruh Jawa Tengah</h3>
-            <p class="text-sm text-slate-500">Servis, pemasangan, perawatan, perbaikan, tukar tambah & jual beli AC untuk semua kota/kabupaten di Jawa Tengah.</p>
-          </div>
+    <div class="area-card fade-up">
+      <div class="area-head">
+        <span class="icon">🗺️</span>
+        <div>
+          <h3>Layanan Reguler — Seluruh Jawa Tengah</h3>
+          <p>Servis, pemasangan, perawatan, perbaikan, tukar tambah &amp; jual beli AC untuk semua kota/kabupaten di Jawa Tengah.</p>
         </div>
       </div>
-      <div class="px-7 pb-6 pt-4">
-        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Contoh area yang sering kami tangani:</p>
-        <div class="flex flex-wrap gap-2.5">
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Magelang & Sekitarnya</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Mertoyudan</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Muntilan</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Secang</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Bandongan</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Borobudur</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Salam</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Tempuran</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Grabag</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Kajoran</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Pakis</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Tegalrejo</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Salaman</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Sawangan</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Dukun</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Kaliangkrik</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Semarang</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Salatiga</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Surakarta / Solo</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Purwokerto</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Tegal</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Pekalongan</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Kudus</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Jepara</span>
-          <span class="bg-white border border-slate-200 rounded-full px-5 py-2 text-sm font-medium shadow-sm">Boyolali</span>
-          <span class="bg-cyan-600 text-white rounded-full px-4 py-2 text-sm font-semibold shadow-sm">+ seluruh Jawa Tengah</span>
+      <div class="chips">
+        <p class="chips-label">Contoh area yang sering kami tangani:</p>
+        <div class="chip-list">
+          <span class="chip">Magelang &amp; Sekitarnya</span><span class="chip">Mertoyudan</span><span class="chip">Muntilan</span><span class="chip">Secang</span><span class="chip">Bandongan</span><span class="chip">Borobudur</span><span class="chip">Salam</span><span class="chip">Tempuran</span><span class="chip">Grabag</span><span class="chip">Kajoran</span><span class="chip">Pakis</span><span class="chip">Tegalrejo</span><span class="chip">Salaman</span><span class="chip">Sawangan</span><span class="chip">Dukun</span><span class="chip">Kaliangkrik</span><span class="chip">Semarang</span><span class="chip">Salatiga</span><span class="chip">Surakarta / Solo</span><span class="chip">Purwokerto</span><span class="chip">Tegal</span><span class="chip">Pekalongan</span><span class="chip">Kudus</span><span class="chip">Jepara</span><span class="chip">Boyolali</span>
+          <span class="chip-all">+ seluruh Jawa Tengah</span>
         </div>
       </div>
     </div>
 
-    <!-- Tingkat 2: Nasional -->
-    <div class="fade-up bg-gradient-to-br from-slate-900 to-cyan-900 rounded-2xl p-8 md:p-10 text-white shadow-xl">
-      <div class="grid md:grid-cols-3 gap-8 items-center">
-        <div class="md:col-span-2">
-          <span class="inline-block bg-cyan-500/25 text-cyan-300 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">🏢 Untuk Korporat, Instansi & Kontraktor</span>
-          <h3 class="text-2xl font-extrabold mb-3">Proyek Tender & Pesanan Kustom —<br>Melayani Seluruh Indonesia</h3>
-          <p class="text-slate-300 text-sm leading-relaxed max-w-xl">
-            Pekerjaan skala besar tidak kami batasi oleh wilayah. Untuk proyek tender, pengadaan instansi, instalasi komersial, dan pesanan kustom, tim kami siap dikerahkan ke seluruh provinsi di Indonesia — dengan manajemen proyek, dokumen lengkap, dan garansi 3 bulan.
-          </p>
+    <div class="nasional fade-up">
+      <div class="nasional-grid">
+        <div>
+          <span class="badge-dark">🏢 Untuk Korporat, Instansi &amp; Kontraktor</span>
+          <h3>Proyek Tender &amp; Pesanan Kustom — Melayani Seluruh Indonesia</h3>
+          <p>Pekerjaan skala besar tidak kami batasi oleh wilayah. Untuk proyek tender, pengadaan instansi, instalasi komersial, dan pesanan kustom, tim kami siap dikerahkan ke seluruh provinsi di Indonesia — dengan manajemen proyek, dokumen lengkap, dan garansi 3 bulan.</p>
         </div>
-        <a href="https://wa.me/6281234567890?text=Halo%20Bariklana,%20saya%20mau%20konsultasi%20proyek%20tender%20/%20pesanan%20kustom"
-           class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-6 py-3.5 rounded-full text-center shadow-lg">
-          Diskusikan Proyek →
-        </a>
+        <a href="https://wa.me/6281234567890?text=Halo%20Bariklana,%20saya%20mau%20konsultasi%20proyek%20tender%20/%20pesanan%20kustom" class="btn-cyan">Diskusikan Proyek →</a>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 border-t border-white/10 pt-8">
-        <div class="text-center"><div class="text-2xl mb-1">🏗️</div><div class="text-sm font-bold">Tender Proyek</div><p class="text-xs text-slate-400 mt-1">Sekolah & gedung bertingkat</p></div>
-        <div class="text-center"><div class="text-2xl mb-1">🏢</div><div class="text-sm font-bold">Komersial</div><p class="text-xs text-slate-400 mt-1">Kantor, hotel, pabrik, mall</p></div>
-        <div class="text-center"><div class="text-2xl mb-1">⚙️</div><div class="text-sm font-bold">Pesanan Kostum</div><p class="text-xs text-slate-400 mt-1">Instalasi kebutuhan khusus seperti Frozen Box / Chiller Box / Kebutuhan Lainnya.</p></div>
-        <div class="text-center"><div class="text-2xl mb-1">🇮🇩</div><div class="text-sm font-bold">Seluruh Indonesia</div><p class="text-xs text-slate-400 mt-1">Semua provinsi terjangkau</p></div>
+      <div class="nasional-icons">
+        <div><div class="emo">🏗️</div><b>Tender Proyek</b><small>Sekolah &amp; gedung bertingkat</small></div>
+        <div><div class="emo">🏢</div><b>Komersial</b><small>Kantor, hotel, pabrik, mall</small></div>
+        <div><div class="emo">⚙️</div><b>Pesanan Kustom</b><small>Instalasi kebutuhan khusus seperti Frozen Box / Chiller Box / Kebutuhan Lainnya.</small></div>
+        <div><div class="emo">🇮🇩</div><b>Seluruh Indonesia</b><small>Semua provinsi terjangkau</small></div>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- ===== GALERI ===== -->
-<section id="galeri" class="py-20 bg-cyan-50/60">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-12 fade-up">
-      <span class="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Hasil Pekerjaan</span>
-      <h2 class="text-3xl font-extrabold mt-2 text-slate-900">Galeri Pengerjaan Kami</h2>
+<section id="galeri" class="tinted">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Hasil Pekerjaan</span>
+      <h2>Galeri Pengerjaan Kami</h2>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-up">
-      <figure class="relative group overflow-hidden rounded-xl h-48 bg-gradient-to-br from-cyan-100 to-blue-100">
-        <img src="images/serviceac-magelang.jpg" alt="Teknisi Service AC Bariklana Magelang memasang unit AC baru" class="h-full w-full object-cover transition duration-300 group-hover:scale-110" loading="lazy" onerror="this.remove()">
-        <span class="absolute inset-0 grid place-items-center text-center text-sm font-semibold text-cyan-700 p-3 group-hover:opacity-0 transition">Pemasangan<br>Unit AC</span>
+    <div class="gallery fade-up">
+      <figure>
+        <img src="images/serviceac-magelang.jpg" alt="Teknisi Service AC Bariklana Magelang memasang unit AC baru" width="480" height="360" loading="lazy" decoding="async" onerror="this.remove()">
+        <figcaption>Pemasangan<br>Unit AC</figcaption>
       </figure>
-      <figure class="relative group overflow-hidden rounded-xl h-48 bg-gradient-to-br from-cyan-100 to-blue-100">
-        <img src="images/serviceacmagelang-perbaikan-ac.jpg" alt="Perbaikan unit AC outdoor oleh teknisi Bariklana" class="h-full w-full object-cover transition duration-300 group-hover:scale-110" loading="lazy" onerror="this.remove()">
-        <span class="absolute inset-0 grid place-items-center text-center text-sm font-semibold text-cyan-700 p-3 group-hover:opacity-0 transition">Perbaikan<br>Unit</span>
+      <figure>
+        <img src="images/serviceacmagelang-perbaikan-ac.jpg" alt="Perbaikan unit AC outdoor oleh teknisi Bariklana" width="480" height="360" loading="lazy" decoding="async" onerror="this.remove()">
+        <figcaption>Perbaikan<br>Unit</figcaption>
       </figure>
-      <figure class="relative group overflow-hidden rounded-xl h-48 bg-gradient-to-br from-cyan-100 to-blue-100">
-        <img src="images/serviceac-cuci-ac-magelang.jpg" alt="Perawatan rutin cuci AC" class="h-full w-full object-cover transition duration-300 group-hover:scale-110" loading="lazy" onerror="this.remove()">
-        <span class="absolute inset-0 grid place-items-center text-center text-sm font-semibold text-cyan-700 p-3 group-hover:opacity-0 transition">Perawatan<br>Rutin</span>
+      <figure>
+        <img src="images/serviceac-cuci-ac-magelang.jpg" alt="Perawatan rutin cuci AC" width="480" height="360" loading="lazy" decoding="async" onerror="this.remove()">
+        <figcaption>Perawatan<br>Rutin</figcaption>
       </figure>
-      <figure class="relative group overflow-hidden rounded-xl h-48 bg-gradient-to-br from-cyan-100 to-blue-100">
-        <img src="images/serviceacmagelanggaransi.jpg" alt="Hasil akhir AC dingin dan bersih bergaransi" class="h-full w-full object-cover transition duration-300 group-hover:scale-110" loading="lazy" onerror="this.remove()">
-        <span class="absolute inset-0 grid place-items-center text-center text-sm font-semibold text-cyan-700 p-3 group-hover:opacity-0 transition">Hasil Akhir<br>AC Dingin & Bersih</span>
+      <figure>
+        <img src="images/serviceacmagelanggaransi.jpg" alt="Hasil akhir AC dingin dan bersih bergaransi" width="480" height="360" loading="lazy" decoding="async" onerror="this.remove()">
+        <figcaption>Hasil Akhir<br>AC Dingin &amp; Bersih</figcaption>
       </figure>
     </div>
   </div>
 </section>
 
 <!-- ===== TESTIMONI ===== -->
-<section id="testimoni" class="py-20">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-14 fade-up">
-      <span class="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Testimoni</span>
-      <h2 class="text-3xl font-extrabold mt-2 text-slate-900">Kata Pelanggan Kami</h2>
+<section id="testimoni">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Testimoni</span>
+      <h2>Kata Pelanggan Kami</h2>
     </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="fade-up bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-        <div class="text-amber-400 mb-3">★★★★★</div>
-        <p class="text-slate-600 text-sm leading-relaxed mb-4">"Panggil cuci AC 3 unit sekaligus, teknisinya datang tepat waktu dan hasilnya wangi & dingin lagi. Garansinya juga bikin tenang."</p>
-        <div class="font-semibold text-sm">— Bu Sri, Mertoyudan</div>
+    <div class="grid-3-single">
+      <div class="card testi fade-up">
+        <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+        <p>"Panggil cuci AC 3 unit sekaligus, teknisinya datang tepat waktu dan hasilnya wangi &amp; dingin lagi. Garansinya juga bikin tenang."</p>
+        <div class="who">— Bu Sri, Mertoyudan</div>
       </div>
-      <div class="fade-up bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-        <div class="text-amber-400 mb-3">★★★★★</div>
-        <p class="text-slate-600 text-sm leading-relaxed mb-4">"AC bus armada kami dirawat rutin oleh Bariklana. Pelayanan responsif dan harga masuk akal untuk perawatan berkala."</p>
-        <div class="font-semibold text-sm">— Pak Agus, Muntilan</div>
+      <div class="card testi fade-up">
+        <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+        <p>"AC bus armada kami dirawat rutin oleh Bariklana. Pelayanan responsif dan harga masuk akal untuk perawatan berkala."</p>
+        <div class="who">— Pak Agus, Muntilan</div>
       </div>
-      <div class="fade-up bg-white rounded-2xl p-7 shadow-sm border border-slate-100">
-        <div class="text-amber-400 mb-3">★★★★★</div>
-        <p class="text-slate-600 text-sm leading-relaxed mb-4">"Proyek pemasangan AC kantor cabang kami di luar kota ditangani profesional, dokumen lengkap untuk tender. Recommended!"</p>
-        <div class="font-semibold text-sm">— PT Mitra Sejahtera, Semarang</div>
+      <div class="card testi fade-up">
+        <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+        <p>"Proyek pemasangan AC kantor cabang kami di luar kota ditangani profesional, dokumen lengkap untuk tender. Recommended!"</p>
+        <div class="who">— PT Mitra Sejahtera, Semarang</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== CTA / KONTAK ===== -->
-<section id="kontak" class="py-20">
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="fade-up bg-gradient-to-br from-cyan-600 to-blue-700 rounded-3xl p-10 md:p-14 text-center text-white shadow-2xl">
-      <h2 class="text-3xl font-extrabold mb-4">AC Tidak Dingin? Serahkan ke Bariklana!</h2>
-      <p class="text-cyan-100 mb-8 max-w-xl mx-auto">Konsultasi gratis via WhatsApp. Ceritakan keluhan AC Anda, tim kami akan memberikan estimasi biaya dengan transparan dan garansi setelah pengerjaan.</p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-        <a href="https://wa.me/6281234567890?text=Halo%20Bariklana,%20saya%20mau%20tanya%20soal%20service%20AC"
-          class="bg-white text-cyan-700 font-bold px-8 py-3.5 rounded-full hover:bg-cyan-50 transition shadow-lg flex items-center justify-center gap-2">
-         <svg class="w-5 h-5" fill="#25D366" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.99 2.9a9.825 9.825 0 012.893 7.007c-.003 5.45-4.437 9.887-9.885 9.887m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/>
-        </svg>
-        Chat WhatsApp Sekarang
+<section id="kontak">
+  <div class="container" style="max-width:56rem">
+    <div class="cta fade-up">
+      <h2>AC Tidak Dingin? Serahkan ke Bariklana!</h2>
+      <p>Konsultasi gratis via WhatsApp. Ceritakan keluhan AC Anda, tim kami akan memberikan estimasi biaya dengan transparan dan garansi setelah pengerjaan.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/6281234567890?text=Halo%20Bariklana,%20saya%20mau%20tanya%20soal%20service%20AC" class="btn-white">
+          <svg width="20" height="20" fill="#25D366" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.99 2.9a9.825 9.825 0 012.893 7.007c-.003 5.45-4.437 9.887-9.885 9.887m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
+          Chat WhatsApp Sekarang
         </a>
       </div>
-      <div class="grid sm:grid-cols-3 gap-6 text-sm text-cyan-100 border-t border-white/20 pt-8">
-        <div><div class="font-bold text-white mb-1">📍 Lokasi</div>Kota Magelang, Jawa Tengah</div>
-        <div><div class="font-bold text-white mb-1">🕐 Jam Operasional</div>Senin – Sabtu, 08.00 – 17.00 WIB</div>
-        <div><div class="font-bold text-white mb-1">🌐 Website</div>bariklanateknik.com</div>
+      <div class="cta-info">
+        <div><b>📍 Lokasi</b>Kota Magelang, Jawa Tengah</div>
+        <div><b>🕐 Jam Operasional</b>Senin – Sabtu, 08.00 – 17.00 WIB</div>
+        <div><b>🌐 Website</b>bariklanateknik.com</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
-<footer class="bg-slate-900 text-slate-400 py-10 text-sm">
-  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center md:text-left">
+<footer>
+  <div class="container footer-grid">
     <div>
-      <div class="flex items-center justify-center md:justify-start gap-2 mb-3">
-        <img src="images/service-ac-magelang-logo-bariklana.png" alt="Logo Bariklana Teknik Magelang" class="w-8 h-8 rounded-lg object-contain">
-        <span class="font-extrabold text-white text-lg">Bariklana Teknik Magelang</span>
+      <div class="brand-row">
+        <img src="images/service-ac-magelang-logo-bariklana.png" alt="Logo Bariklana Teknik Magelang" width="32" height="32" loading="lazy" decoding="async" style="width:2rem;height:2rem;border-radius:.5rem;object-fit:contain">
+        <span>Bariklana Teknik Magelang</span>
       </div>
-      <p class="text-xs leading-relaxed">Penyedia jasa pendingin udara komprehensif untuk residensial, komersial, dan kendaraan. Layanan reguler seluruh Jawa Tengah — proyek tender & pesanan kustom melayani se-Indonesia. Garansi 3 bulan untuk setiap pengerjaan.</p>
+      <p class="xs">Penyedia jasa pendingin udara komprehensif untuk residensial, komersial, dan kendaraan. Layanan reguler seluruh Jawa Tengah — proyek tender &amp; pesanan kustom melayani se-Indonesia. Garansi 3 bulan untuk setiap pengerjaan.</p>
     </div>
     <div>
-      <h3 class="font-bold text-white mb-3">Layanan</h3>
-      <p class="text-xs leading-loose">Servis AC Rumah & Kendaraan • Pemasangan Baru & Bekas • Perawatan Rutin • Perbaikan Unit • Tukar Tambah • Jual Beli AC Semua Ukuran</p>
+      <h3>Layanan</h3>
+      <p class="xs">Servis AC Rumah &amp; Kendaraan • Pemasangan Baru &amp; Bekas • Perawatan Rutin • Perbaikan Unit • Tukar Tambah • Jual Beli AC Semua Ukuran</p>
     </div>
     <div>
-      <h3 class="font-bold text-white mb-3">Kontak</h3>
-      <p class="text-xs leading-loose">📱 WhatsApp: 0812-3456-7890<br>🌐 bariklanateknik.com<br>🕐 Senin–Sabtu, 08.00–17.00 WIB</p>
+      <h3>Kontak</h3>
+      <p class="xs">📱 WhatsApp: 0812-3456-7890<br>🌐 bariklanateknik.com<br>🕐 Senin–Sabtu, 08.00–17.00 WIB</p>
     </div>
   </div>
-  <p class="text-center mt-8 text-xs border-t border-slate-800 pt-6">© 2026 Service AC Bariklana Magelang — bariklanateknik.com</p>
+  <p class="copyright" style="max-width:72rem;margin-inline:auto;padding-inline:1rem">© 2026 Service AC Bariklana Magelang — bariklanateknik.com</p>
 </footer>
 
 <!-- ===== TOMBOL WHATSAPP MELAYANG ===== -->
 <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20tanya%20soal%20service%20AC"
-   class="wa-float fixed bottom-5 right-5 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full grid place-items-center shadow-xl"
-   aria-label="Chat WhatsApp Bariklana">
-  <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2zm5.5 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 01-5.7-5c-.6-1-1-2.1-.4-2.9.3-.4.6-.5.9-.5h.5c.2 0 .3.1.5.5l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3-.1.5.4.8 1 1.5 1.7 2 .3.2.6.4 1 .6.2.1.4.1.5-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.4.2.4.4.4.6z"/></svg>
+   class="wa-float" aria-label="Chat WhatsApp Bariklana">
+  <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2zm5.5 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 01-5.7-5c-.6-1-1-2.1-.4-2.9.3-.4.6-.5.9-.5h.5c.2 0 .3.1.5.5l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3-.1.5.4.8 1 1.5 1.7 2 .3.2.6.4 1 .6.2.1.4.1.5-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.4.2.4.4.4.6z"/></svg>
 </a>
 
 <script>
 // Menu mobile
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+var menuBtn = document.getElementById('menuBtn');
+var mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', function () {
+  var open = mobileMenu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open);
+});
+mobileMenu.querySelectorAll('a').forEach(function (a) {
+  a.addEventListener('click', function () { mobileMenu.classList.remove('open'); });
+});
 
 // Animasi scroll (fade-up)
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+if ('IntersectionObserver' in window) {
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(function (el) { observer.observe(el); });
+} else {
+  document.querySelectorAll('.fade-up').forEach(function (el) { el.classList.add('visible'); });
+}
 </script>
 
 </body>
