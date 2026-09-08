@@ -32,6 +32,7 @@
     "addressCountry": "ID"
   },
   "areaServed": [{ "@type": "State", "name": "Jawa Tengah" }],
+  "hasMap": "https://maps.app.goo.gl/gLzdb6FzbnMR14t36",
   "description": "Servis AC rumah & kendaraan, pemasangan unit baru & bekas, perawatan rutin, perbaikan, tukar tambah & jual beli. Layanan reguler seluruh Jawa Tengah; proyek tender & pesanan kustom melayani seluruh Indonesia.",
   "priceRange": "$$",
   "openingHours": "Mo-Sa 08:00-17:00"
@@ -156,12 +157,29 @@ section{padding:5rem 0}
 .gallery figcaption{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-size:.85rem;font-weight:600;color:#0e7490;padding:.75rem;transition:opacity .3s}
 .gallery figure:hover figcaption{opacity:0}
 
-/* ===== TESTIMONI ===== */
-.grid-3-single{display:grid;gap:1.5rem}
-@media(min-width:768px){.grid-3-single{grid-template-columns:repeat(3,1fr)}}
-.stars{color:#fbbf24;margin-bottom:.75rem}
-.testi p{color:#475569;font-size:.875rem;margin-bottom:1rem}
-.testi .who{font-weight:600;font-size:.85rem}
+/* ===== LOKASI ===== */
+.map-wrap{max-width:56rem;margin-inline:auto}
+.map-frame{border-radius:1.25rem;overflow:hidden;box-shadow:0 15px 30px -10px rgba(8,47,73,.25);border:1px solid #e2e8f0;background:#fff}
+.map-frame iframe{display:block;width:100%;height:380px;border:0}
+.map-cta{text-align:center;margin-top:1.5rem}
+.map-note{text-align:center;margin-top:.75rem;font-size:.8rem;color:#64748b}
+
+/* ===== TESTIMONI MARQUEE ===== */
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent)}
+.marquee-track{display:flex;gap:1.5rem;width:max-content;animation:marquee 40s linear infinite;padding-bottom:.5rem}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+.testi-card{width:20rem;flex-shrink:0}
+@media(max-width:480px){.testi-card{width:17rem}}
+.testi-card .stars{color:#fbbf24;margin-bottom:.75rem}
+.testi-card p{color:#475569;font-size:.875rem;margin-bottom:1rem}
+.testi-card .who{font-weight:600;font-size:.85rem}
+@media(prefers-reduced-motion:reduce){
+  .marquee-track{animation:none;flex-wrap:wrap;width:100%;justify-content:center}
+}
 
 /* ===== CTA ===== */
 .cta{background:linear-gradient(135deg,#0891b2,#1d4ed8);border-radius:1.5rem;padding:2.5rem 1.5rem;text-align:center;color:#fff;box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
@@ -235,7 +253,6 @@ footer .copyright{text-align:center;margin-top:2rem;font-size:.75rem;border-top:
 
 <!-- ===== HERO ===== -->
 <section id="home" class="hero">
-  <!-- LCP: gambar hero sebagai <img> dengan fetchpriority tinggi, bukan background CSS -->
   <img class="hero-img" src="ac-pasang.jpg" alt="Teknisi memasang unit AC" width="1600" height="900" fetchpriority="high" decoding="async">
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container">
@@ -373,29 +390,139 @@ footer .copyright{text-align:center;margin-top:2rem;font-size:.75rem;border-top:
   </div>
 </section>
 
-<!-- ===== TESTIMONI ===== -->
+<!-- ===== LOKASI / GOOGLE BUSINESS ===== -->
+<section id="lokasi" class="tinted">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Temukan Kami</span>
+      <h2>Lokasi Service AC Bariklana Magelang</h2>
+      <p>Kunjungi workshop kami di Kota Magelang, atau hubungi via WhatsApp untuk layanan panggilan ke seluruh Jawa Tengah.</p>
+    </div>
+    <div class="map-wrap fade-up">
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63290.42002406251!2d110.22499836214196!3d-7.503697969371673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a8f507c213d8f%3A0xe93573e8a6547b29!2sService%20AC%20Magelang%20Bariklana%20Teknik!5e0!3m2!1sid!2sid!4v1788828392786!5m2!1sid!2sid"
+          title="Lokasi Kantor Service AC Bariklana Magelang di Google Maps"
+          width="100%" height="380"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <div class="map-cta">
+        <a href="https://maps.app.goo.gl/gLzdb6FzbnMR14t36" class="btn-cyan" style="display:inline-block;padding:.9rem 2rem">⭐ Lihat Review Kami di Google</a>
+      </div>
+      <p class="map-note">Google Business Profile terverifikasi ✓</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONI (MARQUEE) ===== -->
 <section id="testimoni">
   <div class="container">
     <div class="section-head fade-up">
       <span class="eyebrow">Testimoni</span>
       <h2>Kata Pelanggan Kami</h2>
+      <p>Berbagai ulasan dari pelanggan rumah tangga, pemilik usaha, hingga armada di seluruh Jawa Tengah.</p>
     </div>
-    <div class="grid-3-single">
-      <div class="card testi fade-up">
+  </div>
+
+  <div class="marquee fade-up">
+    <div class="marquee-track">
+
+      <!-- SALINAN 1 -->
+      <div class="card testi-card">
         <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
         <p>"Panggil cuci AC 3 unit sekaligus, teknisinya datang tepat waktu dan hasilnya wangi &amp; dingin lagi. Garansinya juga bikin tenang."</p>
         <div class="who">— Bu Sri, Mertoyudan</div>
       </div>
-      <div class="card testi fade-up">
+      <div class="card testi-card">
         <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
         <p>"AC bus armada kami dirawat rutin oleh Bariklana. Pelayanan responsif dan harga masuk akal untuk perawatan berkala."</p>
         <div class="who">— Pak Agus, Muntilan</div>
       </div>
-      <div class="card testi fade-up">
+      <div class="card testi-card">
         <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
         <p>"Proyek pemasangan AC kantor cabang kami di luar kota ditangani profesional, dokumen lengkap untuk tender. Recommended!"</p>
         <div class="who">— PT Mitra Sejahtera, Semarang</div>
       </div>
+      <div class="card testi-card">
+        <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+        <p>"AC kamar tiba-tiba mati total pas panas banget. Ditangani sore itu juga, ternyata cuma kapasitor. Dibebankan sesuai kerusakan, tidak dilebih-lebihkan."</p>
+        <div class="who">— Mas Rifqi, Magelang Selatan</div>
+      </div>
+      <div class="card testi-card">
+        <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+        <p>"Tukar tambah AC lama ¾ PK jadi 1 PK baru. Penilaian harga jujur, nggak pakai drama. Instalasinya rapi banget."</p>
+        <div class="who">— Bu Wati, Secang</div>
+      </div>
+      <div class="card testi-card">
+        <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+        <p>"Kontrak perawatan AC bulanan untuk 12 unit di klinik kami. Jadwal konsisten, laporan tiap kunjungan. Kerja sangat profesional."</p>
+        <div class="who">— Klinik Sehat Bersama, Salatiga</div>
+      </div>
+      <div class="card testi-card">
+        <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+        <p>"Pesan chiller box untuk usaha frozen food. Dikerjakan sesuai spesifikasi custom yang kami minta, komunikasi enak dari awal sampai tes unit."</p>
+        <div class="who">— CV Berkah Jaya, Semarang</div>
+      </div>
+      <div class="card testi-card">
+        <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+        <p>"Belanja AC second 2 unit, semua sudah dicek teknisi dan dinginnya mantap. Harga jujur untuk kualitasnya."</p>
+        <div class="who">— Pak Hendra, Muntilan</div>
+      </div>
+      <div class="card testi-card">
+        <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+        <p>"Teknisi datang dari Magelang ke Boyolali karena AC kantor kami bermasalah. Jarang ada servis AC yang mau keluar kota sefleksibel ini."</p>
+        <div class="who">— PT Delta Konstruksi, Boyolali</div>
+      </div>
+
+      <!-- SALINAN 2 (duplikat persis — wajib agar loop mulus) -->
+      <div class="card testi-card" aria-hidden="true">
+        <div class="stars">★★★★★</div>
+        <p>"Panggil cuci AC 3 unit sekaligus, teknisinya datang tepat waktu dan hasilnya wangi &amp; dingin lagi. Garansinya juga bikin tenang."</p>
+        <div class="who">— Bu Sri, Mertoyudan</div>
+      </div>
+      <div class="card testi-card" aria-hidden="true">
+        <div class="stars">★★★★★</div>
+        <p>"AC bus armada kami dirawat rutin oleh Bariklana. Pelayanan responsif dan harga masuk akal untuk perawatan berkala."</p>
+        <div class="who">— Pak Agus, Muntilan</div>
+      </div>
+      <div class="card testi-card" aria-hidden="true">
+        <div class="stars">★★★★★</div>
+        <p>"Proyek pemasangan AC kantor cabang kami di luar kota ditangani profesional, dokumen lengkap untuk tender. Recommended!"</p>
+        <div class="who">— PT Mitra Sejahtera, Semarang</div>
+      </div>
+      <div class="card testi-card" aria-hidden="true">
+        <div class="stars">★★★★★</div>
+        <p>"AC kamar tiba-tiba mati total pas panas banget. Ditangani sore itu juga, ternyata cuma kapasitor. Dibebankan sesuai kerusakan, tidak dilebih-lebihkan."</p>
+        <div class="who">— Mas Rifqi, Magelang Selatan</div>
+      </div>
+      <div class="card testi-card" aria-hidden="true">
+        <div class="stars">★★★★★</div>
+        <p>"Tukar tambah AC lama ¾ PK jadi 1 PK baru. Penilaian harga jujur, nggak pakai drama. Instalasinya rapi banget."</p>
+        <div class="who">— Bu Wati, Secang</div>
+      </div>
+      <div class="card testi-card" aria-hidden="true">
+        <div class="stars">★★★★★</div>
+        <p>"Kontrak perawatan AC bulanan untuk 12 unit di klinik kami. Jadwal konsisten, laporan tiap kunjungan. Kerja sangat profesional."</p>
+        <div class="who">— Klinik Sehat Bersama, Salatiga</div>
+      </div>
+      <div class="card testi-card" aria-hidden="true">
+        <div class="stars">★★★★★</div>
+        <p>"Pesan chiller box untuk usaha frozen food. Dikerjakan sesuai spesifikasi custom yang kami minta, komunikasi enak dari awal sampai tes unit."</p>
+        <div class="who">— CV Berkah Jaya, Semarang</div>
+      </div>
+      <div class="card testi-card" aria-hidden="true">
+        <div class="stars">★★★★★</div>
+        <p>"Belanja AC second 2 unit, semua sudah dicek teknisi dan dinginnya mantap. Harga jujur untuk kualitasnya."</p>
+        <div class="who">— Pak Hendra, Muntilan</div>
+      </div>
+      <div class="card testi-card" aria-hidden="true">
+        <div class="stars">★★★★★</div>
+        <p>"Teknisi datang dari Magelang ke Boyolali karena AC kantor kami bermasalah. Jarang ada servis AC yang mau keluar kota sefleksibel ini."</p>
+        <div class="who">— PT Delta Konstruksi, Boyolali</div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -414,7 +541,7 @@ footer .copyright{text-align:center;margin-top:2rem;font-size:.75rem;border-top:
       </div>
       <div class="cta-info">
         <div><b>📍 Lokasi</b>Kota Magelang, Jawa Tengah</div>
-        <div><b>🕐 Jam Operasional</b>Senin – Sabtu, 08.00 – 17.00 WIB<b> Layanan Online 24 Jam</b></b></div>
+        <div><b>🕐 Jam Operasional</b>Senin – Sabtu, 08.00 – 17.00 WIB • Layanan Online 24 Jam</div>
         <div><b>🌐 Website</b>bariklanateknik.com</div>
       </div>
     </div>
